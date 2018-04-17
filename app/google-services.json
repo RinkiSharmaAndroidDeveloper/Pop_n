@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "80076498474",
+    "project_id": "firebase-popn"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:80076498474:android:a1923f5182d0f6ee",
+        "android_client_info": {
+          "package_name": "com.popn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "80076498474-luhsgujpu9ns4fn4feutn95opkb3k3eq.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "80076498474-jc661g2gidea2ndefrec3mbvkam4mhg4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.popn",
+            "certificate_hash": "db2945572d9eeb7fe6b24eb1b1d8dfcad939e338"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXMOeYvlOq9DftdpErcBfIZ5544VrUsC0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

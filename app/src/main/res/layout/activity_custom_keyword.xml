@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_custom_keyword"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.popn.PopActivities.CustomKeywordActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_sign_up_personal_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F2F2F2"
+        >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            >
+            <ImageView
+                android:id="@+id/back"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:src="@drawable/back_pink"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Back"
+                android:textSize="18sp"
+                android:textColor="#ff2d55"
+                android:id="@+id/textView3"
+                />
+
+            <TextView
+                android:layout_weight="1.8"
+                android:id="@+id/TVLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Broadcasts"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:layout_marginRight="8dp"
+                />
+
+           <!-- <TextView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="."
+                android:textSize="20sp"
+                android:textColor="#ff2d55"
+                android:textStyle="bold"
+                />-->
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C7C7CC"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:text="Now get more specific! Click on a \n Keyword below or create your own!"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            />
+
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Custom"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/custom_text_background"
+            android:textColor="#A7A7AA"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_above="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C7C7CC"/>
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <EditText
+            android:id="@+id/editComment"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="276dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:hint="Write a keyword"
+            android:textSize="18sp"
+            android:paddingTop="5dp"
+            android:paddingLeft="15dp"
+            android:background="@drawable/edittext_background"
+            android:textColor="#8E8E96"
+            />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            android:textColor="#ff2d55"
+            android:id="@+id/send" />
+
+    </LinearLayout>
+
+</RelativeLayout>

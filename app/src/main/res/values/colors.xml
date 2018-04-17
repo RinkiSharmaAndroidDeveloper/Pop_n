@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#8ed1cdcd</color>
+    <color name="colorAccent">#717070</color>
+    <color name="QRCodeBlackColor">#000000</color>
+    <color name="QRCodeWhiteColor">#FFFFFF</color>
+    <color name="colorTextGray">#868383</color>
+    <color name="colorTextPink">#ff2d55</color>
+    <color name="colorTextBlue">#5CC8FA</color>
+    <color name="colorTextYellow">#FF9501</color>
+    <color name="colorEditText">#007AFF</color>
+    <color name="color_preloader_start">#ffffff</color>
+    <color name="color_preloader_center">#000000</color>
+    <color name="color_preloader_end">#ff2d55</color>
+
+</resources>

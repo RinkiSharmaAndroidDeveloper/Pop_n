@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sign_up_personal_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        >
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:src="@drawable/back_pink"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            android:visibility="invisible"
+            android:textSize="18sp"
+            android:textColor="#ff2d55"
+            />
+
+        <TextView
+            android:layout_weight="1.1"
+            android:id="@+id/TVLogin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="+1(408) 123-4567"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:layout_marginRight="8dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Done"
+            android:id="@+id/done1"
+            android:textSize="18sp"
+            android:textColor="#ff2d55"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C7C7CC"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:text="Please enter your personal information"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C7C7CC"/>
+
+        <EditText
+            android:id="@+id/firstName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="first name"
+            android:textColor="#0b0b0b"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:textColorHint="#C7C7CC"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            />
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C7C7CC"/>
+
+        <EditText
+            android:id="@+id/lastName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="last name"
+            android:gravity="center"
+            android:textColor="#0b0b0b"
+            android:textColorHint="#C7C7CC"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            />
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C7C7CC"/>
+
+        <EditText
+            android:id="@+id/dateOfBirth"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:hint="Date of birth (YYYY-MM-DD)"
+            android:textColor="#0b0b0b"
+            android:textColorHint="#C7C7CC"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@android:color/transparent"
+            />
+
+        <View
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#C7C7CC"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
+
+</RelativeLayout>

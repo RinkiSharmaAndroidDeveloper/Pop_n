@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bgLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/linear_identity"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:background="#ece8e8"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:id="@+id/back_job"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/back_pink"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Back"
+                android:id="@+id/back"
+                android:textSize="18sp"
+                android:textColor="#ff2d55"
+                />
+
+            <TextView
+                android:id="@+id/edit_screen"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.7"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Add Identity"
+                android:textColor="#ff2d55"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/Save"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:text="Save"
+                android:textColor="#ff2d55"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/add_identity_background"
+            android:id="@+id/mainLayout"
+            android:layout_weight="1.2"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_margin="12dp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1.3"
+                    android:id="@+id/identity_Name"
+                    android:textColor="@color/colorTextGray"
+                    android:hint="Enter Identity Name"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/linear_layout"
+                    android:layout_height="wrap_content">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_marginTop="6dp"
+                        android:id="@+id/profile_image"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_below="@+id/social"
+                        android:src="@drawable/girl2"
+                        app:civ_border_width="0dp"
+                        app:civ_border_color="#FF000000"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:id="@+id/person_Name"
+                        android:textColor="@color/colorTextGray"
+                        android:hint="Enter Name"/>
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                         android:inputType="number"
+                        android:textColor="@color/colorTextGray"
+                        android:hint="Enter Age"
+                        android:id="@+id/age" />
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+
+                        android:id="@+id/location"
+                        android:textColor="@color/colorTextGray"
+                        android:hint="Enter City"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_height="70dp">
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_color_button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/pink_circle"
+                android:src="@drawable/pink_32" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/purple_circle"
+                android:src="@drawable/purple_32" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/sky_blue_circle"
+                android:src="@drawable/sky_32" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/yellow_circle"
+                android:src="@drawable/yellow_32" />
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/gray_circle"
+                android:src="@drawable/circle_white_32" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
+    <!--Bottom sheet content-->
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/bottom_sheet1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="true"
+        android:orientation="vertical"
+        android:background="@drawable/friend_rounded_shape"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Please select"
+                android:textSize="13sp"
+                android:textColor="#787878"
+                />
+
+            <View
+                android:layout_marginTop="4dp"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/photoGallery"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Photo Gallery"
+                android:textSize="16sp"
+                android:textColor="#116ade"
+                android:textStyle="bold"
+                />
+
+            <View
+                android:layout_marginTop="4dp"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:background="#000000" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:id="@+id/camera"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Camera"
+                android:textSize="16sp"
+                android:textColor="#116ade"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>

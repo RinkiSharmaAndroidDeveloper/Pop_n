@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pop\'n</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pin_content_desc">PIN input field</string>
+    <string name="pin_label_text">PIN</string>
+    <string name="signup_screen_enter_number">Please confirm your country code and enter your phone number</string>
+    <string name="verification_screen">We have sent you an SMS with code to the number above.</string>
+    <string name="verification_screen_six_digit">To complete your phone number verification, please enter the 6-digit activation code.</string>
+</resources>

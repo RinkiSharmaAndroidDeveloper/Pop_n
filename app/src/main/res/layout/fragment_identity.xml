@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_identities"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/linearLayout1"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            card_view:cardPreventCornerOverlap="false"
+            app:cardPreventCornerOverlap="false"
+            xmlns:card_view="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            >
+
+            <RelativeLayout
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_margin="5dp"
+                android:id="@+id/relativeLayout"
+                android:background="@drawable/cardview_background"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                >
+
+
+                <TextView
+                    android:id="@+id/social"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Night Out"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorTextGray"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/profile_image"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_below="@+id/social"
+                    android:src="@drawable/girl2"
+                    app:civ_border_width="0dp"
+                    app:civ_border_color="#FF000000"/>
+
+                <TextView
+                    android:id="@+id/mattie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@+id/profile_image"
+                    android:layout_below="@+id/social"
+                    android:text="Scarlett Johansen"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextGray"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/edit1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="4dp"
+                    android:textColor="@color/colorEditText"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/person_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mattie"
+                    android:layout_toRightOf="@+id/profile_image"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:text="32 Years Old"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextGray"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
+
+
+
+                <TextView
+                    android:id="@+id/discountNewRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/person_age"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/profile_image"
+                    android:text="Los Angeles, CA"
+                    android:textColor="@color/colorTextGray"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    />
+
+
+                <LinearLayout
+                    android:id="@+id/linearGridLayout11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/discountNewRate"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    >
+                    <GridView
+                        android:id="@+id/grid1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/os_texts"
+                        android:numColumns="5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutScanner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/linearGridLayout11"
+                    android:gravity="center"
+                    >
+
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:id="@+id/qr_image"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/qr"
+                        />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="51dp"
+        android:id="@+id/linearLayout2"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            card_view:cardPreventCornerOverlap="false"
+            app:cardPreventCornerOverlap="false"
+            xmlns:card_view="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            >
+
+            <RelativeLayout
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/cardview_background"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:layout_gravity="center"
+                android:id="@+id/relativeLayout1"
+                android:padding="10dp"
+                >
+
+
+                <TextView
+                    android:id="@+id/social2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Corporate"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorTextGray"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/profile_image2"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_below="@+id/social2"
+                    android:src="@drawable/girl2"
+                    app:civ_border_width="0dp"
+                    app:civ_border_color="#FF000000"/>
+
+                <TextView
+                    android:id="@+id/mattie2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@+id/profile_image2"
+                    android:layout_below="@+id/social2"
+                    android:text="Scarlett Johansen"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextGray"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/edit2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="4dp"
+                    android:textColor="@color/colorEditText"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/discountDescription2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mattie2"
+                    android:layout_toRightOf="@+id/profile_image2"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:text="32 Years Old"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextGray"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
+
+
+
+                <TextView
+                    android:id="@+id/discountNewRate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/discountDescription2"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/profile_image2"
+                    android:text="Los Angeles, CA"
+                    android:textColor="@color/colorTextGray"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/linearGridLayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/discountNewRate2"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <GridView
+                        android:id="@+id/grid2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/os_texts"
+                        android:numColumns="5" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutScanner2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/linearGridLayout3"
+                    android:gravity="center"
+                    >
+
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/qr"
+                        android:id="@+id/qr_image2"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_marginTop="91dp"
+        android:id="@+id/linearLayout3"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view3"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            card_view:cardPreventCornerOverlap="false"
+            app:cardPreventCornerOverlap="false"
+            xmlns:card_view="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            >
+
+            <RelativeLayout
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/cardview_background"
+                android:layout_width="match_parent"
+                android:id="@+id/relativeLayout2"
+                android:layout_height="360dp"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                >
+
+
+                <TextView
+                    android:id="@+id/social3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Social"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorTextGray"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_marginTop="6dp"
+                    android:id="@+id/profile_image3"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_below="@+id/social3"
+                    android:src="@drawable/girl2"
+                    app:civ_border_width="0dp"
+                    app:civ_border_color="#FF000000"/>
+
+                <TextView
+                    android:id="@+id/mattie3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_toRightOf="@+id/profile_image3"
+                    android:layout_below="@+id/social3"
+                    android:text="Scarlett Johansen"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextGray"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/edit3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edit"
+                    android:textSize="15sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="4dp"
+                    android:textColor="@color/colorEditText"
+                    />
+
+
+
+                <TextView
+                    android:id="@+id/discountDescription3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/mattie3"
+                    android:layout_toRightOf="@+id/profile_image3"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginStart="5dp"
+                    android:text="32 Years Old"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorTextGray"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
+
+
+
+                <TextView
+                    android:id="@+id/discountNewRate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/discountDescription3"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/profile_image3"
+                    android:text="Los Angeles, CA"
+                    android:textColor="@color/colorTextGray"
+                    android:textAllCaps="false"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/linearGridLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/discountNewRate3"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <GridView
+                        android:id="@+id/grid3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/os_texts"
+                        android:numColumns="5" />
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutScanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/linearGridLayout"
+                    android:gravity="center"
+                    >
+
+                    <ImageView
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/qr"
+                        android:id="@+id/qr_image3"
+                        />
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:indeterminateDrawable="@drawable/progress_bar"
+            android:visibility="gone">
+        </ProgressBar>
+   </RelativeLayout>
+</ScrollView>
