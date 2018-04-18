@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -75,10 +76,13 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
     SocialIdModel socialIdModel1;
     GridView gridView;
     Network_url network_url;
+    List<Integer> ImagesList1;
     List<SocialIdModel> ImagesList =new ArrayList<>();
     SocialIdModel socialIdModel;
     List<SocialIdModel> osImages =new ArrayList<>();
+    List<SocialIdModel> deletedIds =new ArrayList<>();
     IdentityCustomeAdapter identityCustomeAdapter;
+    ProgressBar progressBar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,6 +113,7 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
         qr_code =(ImageView)view.findViewById(R.id.imageView2);
         IdName =(EditText)view.findViewById(R.id.identity_Name);
         PersonName =(EditText)view.findViewById(R.id.person_Name);
+        progressBar =(ProgressBar) view.findViewById(R.id.progressBar);
 
         Age =(EditText)view.findViewById(R.id.age);
         done =(TextView)view.findViewById(R.id.Done);
@@ -146,10 +151,12 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
     AsyncResult<Integer> asyncResult_clickCrossBtn = new AsyncResult<Integer>() {
         @Override
         public void success(Integer pos) {
-            List<SocialIdModel> ImagesList1 =new ArrayList<>();
+            ImagesList1 =new ArrayList<>();
             int i=pos;
+            ImagesList1.add(pos);
+            deletedIds.add(osImages.get(i));
+            osImages.remove(i);
             ImagesList.remove(i);
-
             identityCustomeAdapter.notifyDataSetChanged();
 
         }
@@ -158,13 +165,17 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
 
         }
     };
-    private void deleteSocialIds() {
+    private void deleteSocialIds(final List<SocialIdModel> osImages) {
+        String ids = "";
+        String URL;
         RequestQueue queue = null;
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             queue = Volley.newRequestQueue(getContext().getApplicationContext());
         }
-        //http://vertosys.com/popnapp/delete_social_identity.php?identity_id=&social_id=
-        String URL = network_url.Base_Url + network_url.DeleteSocialIds+ ""+ "=" + identityInformationModel.getIdentityId();
+        for (int i = 0; i < osImages.size(); i++) {
+                ids += "&social_id=" + osImages.get(i).getSocialId();
+            }
+             URL = network_url.Base_Url + network_url.DeleteSocialIds+ "identity_id="+identityInformationModel.getIdentityId()+ids ;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, URL, null,
                 new Response.Listener<JSONObject>() {
@@ -177,19 +188,13 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
                         try {
                             String responsemessage = response.getString("success");
                             String message = response.getString("message");
-                            JSONArray jsonObj = new JSONArray(response.getString("data"));
-
-                            for(int i=0;i<jsonObj.length();i++) {
-                                JSONObject data = jsonObj.getJSONObject(i);
-                                String socialID = data.getString("social_id");
-                                String SocialProfileID = data.getString("social_profileid");
-
-                                socialIdModel=new SocialIdModel(socialID,SocialProfileID);
-                                osImages.add(socialIdModel);
+                            if(responsemessage.equals("true")){
+                                Intent i = new Intent(getActivity(), IdentiesMainActivity.class);
+                                startActivity(i);
+                            }else{
+                                Toast.makeText(getContext(),message,Toast.LENGTH_SHORT).show();
                             }
-                            getSocialImages(osImages);
-
-                        } catch (Exception e) {
+                            } catch (Exception e) {
                             e.printStackTrace();
                         }
                     }
@@ -434,8 +439,13 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
                                 String res = response.getString("message");
 
                                 if(resposne_message.equals("true")) {
-                                    Intent i = new Intent(getActivity(), IdentiesMainActivity.class);
-                                    startActivity(i);
+                                    if(deletedIds.size()>0) {
+                                        deleteSocialIds(deletedIds);
+                                    }else{
+                                        Intent i = new Intent(getActivity(), IdentiesMainActivity.class);
+                                        startActivity(i);
+                                    }
+
                                 }else{
                                     Toast.makeText(getContext(), res, Toast.LENGTH_SHORT).show();
                                 }
@@ -568,6 +578,7 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
                 break;
             case (R.id.Done):
                 getAuthenticateLogin();
+
                 break;
             case (R.id.back):
                 Intent intent =new Intent(getContext().getApplicationContext(), IdentiesMainActivity.class);
