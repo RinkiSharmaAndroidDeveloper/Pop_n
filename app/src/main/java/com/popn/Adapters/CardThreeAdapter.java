@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.popn.AsyncResult;
 import com.popn.PopModels.BroadcastLocationModel;
+import com.popn.PopModels.InterestModel;
 import com.popn.R;
 
 import java.util.List;
@@ -20,18 +21,18 @@ import java.util.List;
 
 public class CardThreeAdapter extends RecyclerView.Adapter<CardThreeAdapter.MyViewHolder> {
     private Context mContext;
-    private List<BroadcastLocationModel> broadcastLocationModelList;
-    AsyncResult<BroadcastLocationModel> asyncResult;
+    private List<InterestModel> broadcastLocationModelList;
 
-
+    AsyncResult<InterestModel> asyncResult;
     public CardThreeAdapter(){
 
     }
 
-    public CardThreeAdapter(Context mContext, List<BroadcastLocationModel> broadcastLocationModelList){
+    public CardThreeAdapter(Context mContext, List<InterestModel> broadcastLocationModelList,AsyncResult<InterestModel> asyncResult){
         this.mContext = mContext;
         this.broadcastLocationModelList = broadcastLocationModelList;
         this.asyncResult = asyncResult;
+
     }
 
     @Override
@@ -44,14 +45,15 @@ public class CardThreeAdapter extends RecyclerView.Adapter<CardThreeAdapter.MyVi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        BroadcastLocationModel broadcastLocationModel = broadcastLocationModelList.get(position);
-        holder.broadcastName.setText(broadcastLocationModel.getName());
+        InterestModel broadcastLocationModel = broadcastLocationModelList.get(position);
+        holder.broadcastName.setText(broadcastLocationModel.getInterestName());
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 asyncResult.success(broadcastLocationModelList.get(position));
             }
         });
+
     }
 
     @Override

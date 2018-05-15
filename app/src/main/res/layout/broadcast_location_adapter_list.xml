@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:id="@+id/card_view"
@@ -10,17 +12,14 @@
         android:layout_height="110dp"
         android:background="#f9f6f6"
         card_view:cardPreventCornerOverlap="false"
-        app:cardPreventCornerOverlap="false"
-        xmlns:card_view="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        >
+        app:cardPreventCornerOverlap="false">
 
         <RelativeLayout
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/border_of_network"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
+            android:layout_height="100dp"
             android:layout_gravity="center"
             android:id="@+id/relativeLayout"
             android:padding="10dp"
@@ -52,9 +51,9 @@
                 />
 
             <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/messangericon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/personicon2"
                 android:layout_alignParentRight="true"
                 />
 
@@ -68,80 +67,68 @@
                 >
 
                 <TextView
-                    android:id="@+id/discountDescription"
+                    android:id="@+id/interest"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="3dp"
                     android:layout_marginStart="3dp"
-                    android:text="is broadcasting"
+
                     android:gravity="center"
                     android:textAllCaps="false"
-                    android:textColor="#8E8E96"
+                    android:textColor="#a79999"
                     android:textSize="16sp"
                     />
 
                 <TextView
-                    android:visibility="gone"
-                    android:id="@+id/interactedName"
+                    android:layout_marginLeft="3dp"
+                    android:id="@+id/purpose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Edwards"
-                    android:textColor="#4FaFDB"
+
+                    android:textColor="#a79999"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
+                    android:textSize="16sp"
                     />
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/discountNewRate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/linearLayout1"
-                android:layout_gravity="center"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="5dp"
-                android:layout_toRightOf="@+id/profile_image"
-                android:text="0.4 miles away"
-                android:textColor="#a79999"
-                android:textAllCaps="false"
-                android:textSize="12sp"
-                android:textStyle="italic"
-                />
 
             <LinearLayout
+                android:id="@+id/buttonsLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_below="@+id/linearLayout1"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="11dp"
-                android:layout_toRightOf="@+id/discountNewRate"
-
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
                 >
 
                 <TextView
                     android:layout_width="55dp"
-                    android:layout_height="23dp"
-                    android:text="Business"
+                    android:layout_height="25dp"
                     android:textSize="10sp"
+                    android:layout_marginLeft="4dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:textColor="#a79999"
                     android:textStyle="bold"
+                    android:id="@+id/key1"
+                    android:visibility="gone"
                     android:background="@drawable/border_of_network2"
                     />
 
                 <TextView
                     android:layout_width="55dp"
-                    android:layout_height="23dp"
-                    android:text="Crypto"
+                    android:layout_height="25dp"
                     android:textSize="10sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:id="@+id/key2"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:layout_marginLeft="4dp"
@@ -149,23 +136,46 @@
                     android:textColor="#a79999"
                     android:textStyle="bold"
                     android:background="@drawable/border_of_network2"
+                    android:visibility="gone"
                     />
 
                 <TextView
                     android:layout_width="55dp"
-                    android:layout_height="23dp"
-                    android:text="Coffee"
+                    android:layout_height="25dp"
                     android:textSize="10sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:id="@+id/key3"
+                    android:layout_marginLeft="4dp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:textColor="#a79999"
                     android:textStyle="bold"
                     android:background="@drawable/border_of_network2"
+                    android:visibility="gone"
                     />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linearLayout1"
+                android:gravity="right"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="3dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/buttonsLayout"
+
+                android:textColor="#a79999"
+                android:textAllCaps="false"
+                android:textSize="14sp"
+                android:textStyle="italic"/>
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>
+
 
 </LinearLayout>

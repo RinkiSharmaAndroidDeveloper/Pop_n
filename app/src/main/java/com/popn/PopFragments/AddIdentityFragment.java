@@ -53,6 +53,7 @@ import java.util.Map;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.R.attr.bitmap;
+import static android.R.attr.breadCrumbShortTitle;
 
 /**
  * Created by Android-Dev2 on 4/4/2018.
@@ -63,7 +64,7 @@ public class AddIdentityFragment extends Fragment implements View.OnClickListene
     public static final int RequestPermissionCode = 1;
     public static final int GET_FROM_GALLERY = 3;
     public static String Get_Idenitiy_color = "229,229,229";
-    ImageView pinkCircle,purpleCircle,yellowCircle,skyCircle,grayCircle;
+    ImageView pinkCircle,purpleCircle,yellowCircle,skyCircle,grayCircle, backIcon;
     EditText identityName, personName, Age, Location;
     LinearLayout mainLayout, imageLayout;
     private BottomSheetBehavior mBottomSheetBehavior1;
@@ -117,6 +118,7 @@ public class AddIdentityFragment extends Fragment implements View.OnClickListene
         imageLayout = (LinearLayout) view.findViewById(R.id.linear_layout);
         photoGallery = (TextView) view.findViewById(R.id.photoGallery);
         back = (TextView) view.findViewById(R.id.back);
+        backIcon = (ImageView) view.findViewById(R.id.back_job);
         camera = (TextView) view.findViewById(R.id.camera);
         save = (TextView) view.findViewById(R.id.Save);
         pinkCircle =(ImageView)view.findViewById(R.id.pink_circle);
@@ -145,6 +147,7 @@ public class AddIdentityFragment extends Fragment implements View.OnClickListene
         camera.setOnClickListener(this);
         save.setOnClickListener(this);
         back.setOnClickListener(this);
+        backIcon.setOnClickListener(this);
         pinkCircle.setOnClickListener(this);
         purpleCircle.setOnClickListener(this);
         yellowCircle.setOnClickListener(this);
@@ -210,10 +213,13 @@ public class AddIdentityFragment extends Fragment implements View.OnClickListene
             case (R.id.Save):
                 saveUserInformation();
                 break;
-
             case (R.id.back):
                 Intent intent =new Intent(getContext(), IdentiesMainActivity.class);
                 startActivity(intent);
+                break;
+            case (R.id.back_job):
+                Intent intentBackIcon = new Intent(getContext(), IdentiesMainActivity.class);
+                startActivity(intentBackIcon);
                 break;
             case (R.id.pink_circle):
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
@@ -416,7 +422,7 @@ public class AddIdentityFragment extends Fragment implements View.OnClickListene
                                 String res = response.getString("message");
 
                                 if(resposne_message.equals("true")) {
-                                    Intent i = new Intent(getActivity(), IdentiesMainActivity.class);
+                                    Intent i = new Intent(getContext(), IdentiesMainActivity.class);
                                     startActivity(i);
                                 }else{
                                     Toast.makeText(getContext(), res, Toast.LENGTH_SHORT).show();

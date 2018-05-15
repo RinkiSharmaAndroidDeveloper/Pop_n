@@ -8,4 +8,5 @@
     <string name="signup_screen_enter_number">Please confirm your country code and enter your phone number</string>
     <string name="verification_screen">We have sent you an SMS with code to the number above.</string>
     <string name="verification_screen_six_digit">To complete your phone number verification, please enter the 6-digit activation code.</string>
+    <string name="broadcast_time">Now choose the identity that you want to broadcast around you.Broadcasts expire 2 hours automatically!</string>
 </resources>

@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_card_one"
+    android:id="@+id/activity_card_two"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.popn.PopActivities.CardOne">
+    tools:context="com.popn.PopActivities.CardTwoActivity">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/activity_sign_up_personal_info"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+
         >
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:weightSum="1"
+            android:weightSum="2"
             >
             <ImageView
                 android:id="@+id/backIcon"
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
-                android:layout_height="18dp"
+                android:layout_height="20dp"
                 android:src="@drawable/back_pink"
                 android:layout_gravity="center"
                 />
@@ -35,13 +36,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Back"
+                android:id="@+id/back"
                 android:textSize="18sp"
                 android:textColor="#ff2d55"
-                android:id="@+id/back"
+
                 />
 
             <TextView
-                android:layout_weight="1.1"
+                android:layout_weight="2.3"
                 android:id="@+id/TVLogin"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -50,16 +52,16 @@
                 android:text="Broadcasts"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="12dp"
                 />
 
             <TextView
+                android:layout_marginRight="1dp"
+                android:id="@+id/next"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Done"
-                android:visibility="gone"
-                android:id="@+id/done"
+                android:text="Next"
                 android:textSize="18sp"
                 android:textColor="#ff2d55"
                 />
@@ -70,27 +72,67 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#C7C7CC"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@color/QRCodeWhiteColor"
+            android:layout_height="match_parent">
+
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="Now choose the type of interaction \n you'd like to have."
+            android:text="@string/broadcast_time"
             android:layout_gravity="center"
             android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="@color/QRCodeBlackColor"
             android:textSize="15sp"
-            android:textColor="#000000"
             />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/linear_layout_identity"
+                android:layout_height="wrap_content">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:scrollbars="vertical"
-            >
+            </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <!--  <android.support.v7.widget.RecyclerView
+              android:id="@+id/recycler_view"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:clipToPadding="false"
+              android:scrollbars="vertical"
+              >
+              </android.support.v7.widget.RecyclerView>-->
 
-        </android.support.v7.widget.RecyclerView>
+
+
+
+        <!-- <TextView
+             android:id="@+id/custom"
+             android:layout_marginTop="10dp"
+             android:layout_width="100dp"
+             android:layout_height="50dp"
+             android:text="Custom"
+             android:textSize="22sp"
+             android:layout_gravity="center"
+             android:gravity="center"
+             android:background="@drawable/custom_text_background"
+             android:textColor="@color/colorTextGray"
+             android:textStyle="bold"
+             />-->
+
+
+
 
     </LinearLayout>
 
 </RelativeLayout>
+
+

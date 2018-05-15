@@ -65,7 +65,7 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
     public static final int GET_FROM_GALLERY = 3;
     public static String Get_Idenitiy_color = "229,229,229";
     AsyncResult<String> asyncResult_selectedCategory;
-    ImageView imageView,pinkCircle,purpleCircle,yellowCircle,skyCircle,grayCircle,qr_code;
+    ImageView imageView,pinkCircle,purpleCircle,yellowCircle,skyCircle,grayCircle,qr_code,backIcon;
     LinearLayout linearLayout,image_layout;
     TextView done,back,delete;
     String keyuserId;
@@ -98,7 +98,7 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
         return fragment;
     }
 
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -121,6 +121,7 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
         done =(TextView)view.findViewById(R.id.Done);
         delete =(TextView)view.findViewById(R.id.delete);
         back =(TextView)view.findViewById(R.id.back);
+        backIcon = (ImageView) view.findViewById(R.id.back_job);
         Location =(EditText)view.findViewById(R.id.location);
 
         linearLayout =(LinearLayout) view.findViewById(R.id.mainLayout);
@@ -134,6 +135,7 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
         image_layout.setOnClickListener(this);
         done.setOnClickListener(this);
         back.setOnClickListener(this);
+        backIcon.setOnClickListener(this);
         delete.setOnClickListener(this);
         setData(identityInformationModel);
         getSocialId();
@@ -177,7 +179,7 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
         for (int i = 0; i < osImages.size(); i++) {
                 ids += "&social_id=" + osImages.get(i).getSocialId();
             }
-             URL = network_url.Base_Url + network_url.DeleteSocialIds+ "identity_id="+identityInformationModel.getIdentityId()+ids ;
+             URL = network_url.Base_Url + network_url.DeleteSocialIds+ "identity_id="+identityInformationModel.getIdentityId()+"&user_id="+identityInformationModel.getIdentityUserId()+ids ;
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, URL, null,
                 new Response.Listener<JSONObject>() {
@@ -585,6 +587,10 @@ public class EditInfoFragment extends Fragment implements View.OnClickListener{
             case (R.id.back):
                 Intent intent =new Intent(getContext().getApplicationContext(), IdentiesMainActivity.class);
                 startActivity(intent);
+                break;
+            case (R.id.back_job):
+                Intent intentBackIcon = new Intent(getContext(), IdentiesMainActivity.class);
+                startActivity(intentBackIcon);
                 break;
             case (R.id.delete):
                 deleteIdentity();

@@ -24,5 +24,10 @@ public class Network_url {
     public static String GetIdentityById ="getIdentityById.php?";
     public static String DeleteById ="deleteIdentity.php?";
     public static String DeleteSocialIds ="delete_social_identity.php?";
+    public static String PersonalBroadcast ="personal_broadcast.php?";
+    public static String LocationBroadcast ="location_broadcast.php?";
+    public static String Create_Broadcast ="create_broadcast.php?";
+    public static String GetPKI ="get_pki.php?";
+    public static String AddKeywords ="add_keyword.php?";
 
 }

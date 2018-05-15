@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#F2F2F2"
+        android:background="@color/colorPrimaryDark"
         >
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,7 +22,7 @@
             android:weightSum="1"
             >
             <ImageView
-                android:id="@+id/back"
+                android:id="@+id/backIcon"
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
@@ -37,7 +37,7 @@
                 android:text="Back"
                 android:textSize="18sp"
                 android:textColor="#ff2d55"
-                android:id="@+id/textView3"
+                android:id="@+id/back"
                 />
 
             <TextView
@@ -73,10 +73,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="Pick a Keyword to broadcast with"
+            android:text="Pick a Purpose to Broadcast with"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:textColor="#000000"
             />
         

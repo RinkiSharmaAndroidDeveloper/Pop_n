@@ -63,13 +63,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".PopActivities.CardTwoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".PopActivities.BroadcastActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PopActivities.CardThreeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />    <activity
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".PopActivities.BroadcastDescription"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -105,7 +110,9 @@
             android:screenOrientation="portrait"
             android:stateNotNeeded="true"
             android:windowSoftInputMode="stateAlwaysHidden" />
-        <activity android:name=".PopActivities.KeywordsActivity"></activity>
+        <activity android:name=".PopActivities.KeywordsActivity" />
+        <activity android:name=".PopActivities.CardFourActivity" />
+        <activity android:name=".PopActivities.BroadcastDetailActivity"></activity>
     </application>
 
 </manifest>

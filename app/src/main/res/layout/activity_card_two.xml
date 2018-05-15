@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_card_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.popn.PopActivities.CardTwoActivity">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/activity_sign_up_personal_info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical"
+
+            >
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                >
+                <ImageView
+                    android:id="@+id/backIcon"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:src="@drawable/back_pink"
+                    android:layout_gravity="center"
+                    />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Back"
+                    android:textSize="18sp"
+                    android:textColor="#ff2d55"
+                    android:id="@+id/back"
+                    />
+
+                <TextView
+                    android:layout_weight="2.3"
+                    android:id="@+id/TVLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Broadcasts"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:layout_marginRight="12dp"
+                    />
+
+                <TextView
+                    android:layout_marginRight="1dp"
+                    android:id="@+id/add"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Next"
+                    android:textSize="18sp"
+                    android:textColor="#ff2d55"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#C7C7CC"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:text="Now get more specific! Click on a \n interest below!"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/QRCodeBlackColor"
+                android:textSize="15sp"
+                />
+
+          <!--  <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                >
+                </android.support.v7.widget.RecyclerView>-->
+
+
+            <com.google.android.flexbox.FlexboxLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/v_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:alignContent="stretch"
+                app:alignItems="stretch"
+                android:padding="5dp"
+                app:flexWrap="wrap"
+                app:showDivider="beginning|middle"
+                app:dividerDrawable="@drawable/divider"
+                >
+            </com.google.android.flexbox.FlexboxLayout>
+
+
+
+            <TextView
+                android:id="@+id/custom"
+                android:layout_marginTop="10dp"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:text="Custom"
+                android:textSize="22sp"
+                android:layout_gravity="center|bottom"
+                android:gravity="center"
+                android:background="@drawable/custom_text_background"
+                android:textColor="@color/colorTextGray"
+                android:textStyle="bold"
+                />
+
+
+</LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+

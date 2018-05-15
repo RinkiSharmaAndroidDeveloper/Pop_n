@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.popn.AsyncResult;
 import com.popn.PopActivities.CardOne;
 import com.popn.PopModels.BroadcastLocationModel;
+import com.popn.PopModels.PurposeModel;
 import com.popn.R;
 
 import java.util.List;
@@ -21,8 +22,8 @@ import java.util.List;
 
 public class CardOneAdapter extends RecyclerView.Adapter<CardOneAdapter.MyViewHolder> {
     private Context mContext;
-    private List<BroadcastLocationModel> broadcastLocationModelList;
-    AsyncResult<BroadcastLocationModel> asyncResult;
+    private List<PurposeModel> broadcastLocationModelList;
+    AsyncResult<PurposeModel> asyncResult;
 
 
 
@@ -30,7 +31,7 @@ public class CardOneAdapter extends RecyclerView.Adapter<CardOneAdapter.MyViewHo
 
     }
 
-    public CardOneAdapter(Context mContext, List<BroadcastLocationModel> broadcastLocationModelList, AsyncResult<BroadcastLocationModel> asyncResult){
+    public CardOneAdapter(Context mContext, List<PurposeModel> broadcastLocationModelList, AsyncResult<PurposeModel> asyncResult){
         this.mContext = mContext;
         this.broadcastLocationModelList = broadcastLocationModelList;
         this.asyncResult = asyncResult;
@@ -47,7 +48,7 @@ public class CardOneAdapter extends RecyclerView.Adapter<CardOneAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
-        BroadcastLocationModel broadcastLocationModel = broadcastLocationModelList.get(position);
+        PurposeModel broadcastLocationModel = broadcastLocationModelList.get(position);
         holder.broadcastName.setText(broadcastLocationModel.getName());
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override

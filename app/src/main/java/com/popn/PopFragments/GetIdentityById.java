@@ -58,9 +58,9 @@ public class GetIdentityById extends Fragment implements View.OnClickListener {
     Network_url network_url;
     LinearLayout linearLayout;
     List<SocialIdModel> ImagesList =new ArrayList<>();
-    SocialIdModel socialIdModel;
+    SocialIdModel socialIdModel,socialIdModel1;
     List<SocialIdModel> osImages =new ArrayList<>();
-    SocialIdModel socialIdModel1;
+
     GridView gridView;
     CircleImageView circleImageView;
     public GetIdentityById(){

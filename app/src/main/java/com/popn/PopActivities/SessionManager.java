@@ -33,8 +33,6 @@ public class SessionManager {
     // All Shared Preferences Keys
     private static final String IS_LOGIN = "IsLoggedIn";
 
-    // User name (make variable public to access from outside)
-    public static final String KEY_ID = "userid";
     public static final String KeY_Fname = "fname";
     public static final String Key_Lname = "lname";
 
@@ -47,6 +45,7 @@ public class SessionManager {
     public static final String KEY_IDENTITY_USERID= "identity_userID";
     public static final String QR_Image= "Qr_Image";
     public static final String Status_Code = "statusCode";
+    public static final String Purpose = "purpose";
     // Constructor
     public SessionManager(Context context) {
         this._context = context;
@@ -79,6 +78,8 @@ public class SessionManager {
             editor.putString(Status_Code, phoneNumber);
         }else if(Key.equals("identity_userID")) {
             editor.putString(KEY_IDENTITY_USERID, phoneNumber);
+        }else if(Key.equals("purpose")) {
+            editor.putString(Purpose, phoneNumber);
         }
         // commit changes
          editor.commit();
@@ -124,6 +125,7 @@ public class SessionManager {
         user.put(QR_Image, pref.getString(QR_Image, null));
         user.put(Status_Code, pref.getString(Status_Code, null));
         user.put(KEY_IDENTITY_USERID, pref.getString(KEY_IDENTITY_USERID, null));
+        user.put(Purpose, pref.getString(Purpose, null));
         //Log.e("DataSessionMAp", pref.getString(KeY_Fname, null) + pref.getString(KEY_EMAIL, null) + pref.getString(Key_Lname, null) + pref.getString(KEY_PASSWORD, null));
         // return user
         return user;

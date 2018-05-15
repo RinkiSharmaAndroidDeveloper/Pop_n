@@ -34,6 +34,7 @@ import com.popn.PopFragments.IdentityFragment;
 import com.popn.PopFragments.IdentityUserFragment;
 import com.popn.PopFragments.Network_detail_fragment;
 import com.popn.PopFragments.RegistrationFragment;
+import com.popn.PopFragments.SettingsFragment;
 import com.popn.PopModels.ConnectionModel;
 import com.popn.PopModels.IdentityInformationModel;
 import com.popn.PopModels.SignupModel;
@@ -82,11 +83,11 @@ public class IdentiesMainActivity extends AppCompatActivity implements View.OnCl
         personalButton = (Button) findViewById(R.id.personalBtn);
         identitiesMainLayout = (LinearLayout) findViewById(R.id.identitiesMainLayout);
         broadcastMainLayout = (LinearLayout) findViewById(R.id.broadcastMainLayout);
-        interactionMainLayout = (LinearLayout) findViewById(R.id.interactionMainLayout);
-        interactionImageView = (ImageView) findViewById(R.id.interaction_imageView);
+       // interactionMainLayout = (LinearLayout) findViewById(R.id.interactionMainLayout);
+      //  interactionImageView = (ImageView) findViewById(R.id.interaction_imageView);
         broadcastImageView = (ImageView) findViewById(R.id.interaction_imageView1);
         identityImageView = (ImageView) findViewById(R.id.interaction_imageView2);
-        interaction = (TextView) findViewById(R.id.textView);
+     //   interaction = (TextView) findViewById(R.id.textView);
         broadcast = (TextView) findViewById(R.id.textView1);
         identities = (TextView) findViewById(R.id.textView2);
 
@@ -106,9 +107,10 @@ public class IdentiesMainActivity extends AppCompatActivity implements View.OnCl
         plus.setOnClickListener(this);
         identitiesMainLayout.setOnClickListener(this);
         broadcastMainLayout.setOnClickListener(this);
-        interactionMainLayout.setOnClickListener(this);
+       // interactionMainLayout.setOnClickListener(this);
         personalButton.setOnClickListener(this);
         getDisplayInfoFragment();
+       // loadSettingsFragment();
 
     }
 
@@ -127,10 +129,30 @@ public class IdentiesMainActivity extends AppCompatActivity implements View.OnCl
         IdentityFragment fragmentIdentity = new IdentityFragment(statusCode);
         Bundle bundleIdentity = new Bundle();
         fragmentIdentity.setArguments(bundleIdentity);
-        fragmentIdentity.newInstance(asyncResult_clickEditBtn);
+        fragmentIdentity.newInstance(asyncResult_clickEditBtn,null,null);
         FragmentManager managerIdentity = getFragmentManager();
         FragmentTransaction transactionIdentity = managerIdentity.beginTransaction();
         transactionIdentity.replace(R.id.fragment_idenity1, fragmentIdentity, null);
+        transactionIdentity.addToBackStack(null);
+        transactionIdentity.commit();
+       /* FragmentManager fragmentManager = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        IdentityFragment fragment = new IdentityFragment();
+        fragment.newInstance(asyncResult_clickEditBtn);
+        fragmentTransaction.add(R.id.fragment_idenity1, fragment);
+        fragmentTransaction.commit();*/
+    }
+
+    public void loadSettingsFragment(){
+        identityLayout.setVisibility(View.GONE);
+        personalLayout.setVisibility(View.GONE);
+        SettingsFragment settingsFragment = new SettingsFragment();
+        Bundle bundleSettingsFragment = new Bundle();
+        settingsFragment.setArguments(bundleSettingsFragment);
+        //settingsFragment.newInstance(asyncResult_clickEditBtn,null,null);
+        FragmentManager managerIdentity = getFragmentManager();
+        FragmentTransaction transactionIdentity = managerIdentity.beginTransaction();
+        transactionIdentity.replace(R.id.fragment_idenity1, settingsFragment, null);
         transactionIdentity.addToBackStack(null);
         transactionIdentity.commit();
        /* FragmentManager fragmentManager = getFragmentManager();
@@ -218,9 +240,13 @@ public class IdentiesMainActivity extends AppCompatActivity implements View.OnCl
         transactionaddIdentityFragment.commit();
 
     }
+
     @Override
     public void onBackPressed() {
-        //super.onBackPressed();
+       /* identityLayout.setVisibility(View.VISIBLE);
+        personalLayout.setVisibility(View.VISIBLE);
+
+        super.onBackPressed();*/
     }
     //Upload second Connection fragment
     AsyncResult<String > asyncResult_addNewConnection = new AsyncResult<String >() {
@@ -313,30 +339,30 @@ public class IdentiesMainActivity extends AppCompatActivity implements View.OnCl
                 break;
             case (R.id.identitiesMainLayout):
                 identityImageView.setImageResource(R.drawable.identitiespinkicon);
-                interactionImageView.setImageResource(R.drawable.interacticon);
+               // interactionImageView.setImageResource(R.drawable.interacticon);
                 broadcastImageView.setImageResource(R.drawable.broadcasticon);
                 identities.setTextColor(Color.parseColor("#ff2d55"));
                 broadcast.setTextColor(Color.parseColor("#868383"));
-                interaction.setTextColor(Color.parseColor("#868383"));
+               // interaction.setTextColor(Color.parseColor("#868383"));
                 break;
             case (R.id.broadcastMainLayout):
                 broadcastImageView.setImageResource(R.drawable.broadcasticonpink);
-                interactionImageView.setImageResource(R.drawable.interacticon);
+               // interactionImageView.setImageResource(R.drawable.interacticon);
                 identityImageView.setImageResource(R.drawable.identitiesgrayicon);
                 identities.setTextColor(Color.parseColor("#868383"));
                 broadcast.setTextColor(Color.parseColor("#ff2d55"));
-                interaction.setTextColor(Color.parseColor("#868383"));
+               // interaction.setTextColor(Color.parseColor("#868383"));
                 Intent intent =new Intent(IdentiesMainActivity.this,BroadcastActivity.class);
                 startActivity(intent);
                 break;
-            case (R.id.interactionMainLayout):
+           /* case (R.id.interactionMainLayout):
                 interactionImageView.setImageResource(R.drawable.interacticonpink);
                 broadcastImageView.setImageResource(R.drawable.broadcasticon);
                 identityImageView.setImageResource(R.drawable.identitiesgrayicon);
                 identities.setTextColor(Color.parseColor("#868383"));
                 broadcast.setTextColor(Color.parseColor("#868383"));
                 interaction.setTextColor(Color.parseColor("#ff2d55"));
-                break;
+                break;*/
         }
     }
 

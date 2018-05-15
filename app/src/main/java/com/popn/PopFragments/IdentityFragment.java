@@ -84,7 +84,8 @@ public class IdentityFragment extends Fragment implements View.OnClickListener {
     String statusCode;
     ProgressBar progressBar;
     CardView cardView;
-
+    String isBroadcast;
+    AsyncResult<String> asyncResult_selectedIdentityId;
     public IdentityFragment() {
         // Required empty public constructor
     }
@@ -94,10 +95,12 @@ public class IdentityFragment extends Fragment implements View.OnClickListener {
     }
 
     // TODO: Rename and change types and number of parameters
-    public IdentityFragment newInstance(AsyncResult<IdentityInformationModel> asyncResult_selectedCategory) {
+    public IdentityFragment newInstance(AsyncResult<IdentityInformationModel> asyncResult_selectedCategory,String isBroadcast,AsyncResult<String> asyncResult_selectedIdentityId) {
         IdentityFragment fragment = new IdentityFragment();
         Bundle args = new Bundle();
         this.asyncResult_selectedCategory = asyncResult_selectedCategory;
+        this.isBroadcast = isBroadcast;
+        this.asyncResult_selectedIdentityId = asyncResult_selectedIdentityId;
         return fragment;
     }
 
@@ -159,7 +162,11 @@ public class IdentityFragment extends Fragment implements View.OnClickListener {
         user = sessionManager.getUserDetails();
         userId = user.get("userID");
         qr_code = user.get("Qr_Image");
-
+        if(isBroadcast!=null && isBroadcast.equals("1")){
+            textView1.setVisibility(View.GONE);
+            textView2.setVisibility(View.GONE);
+            textView3.setVisibility(View.GONE);
+        }
         linearLayout1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -170,7 +177,9 @@ public class IdentityFragment extends Fragment implements View.OnClickListener {
                 FrameLayout.LayoutParams params1 = (FrameLayout.LayoutParams) linearLayout1.getLayoutParams();
                 params1.setMargins(0, 290, 0, 0);
                 linearLayout1.setLayoutParams(params1);
-
+                if(asyncResult_selectedIdentityId!=null) {
+                    asyncResult_selectedIdentityId.success(identityInformationModels.get(0).getIdentityId());
+                }
 
                 FrameLayout.LayoutParams params2 = (FrameLayout.LayoutParams) linearLayout2.getLayoutParams();
                 params2.setMargins(0, 40, 0, 0);
@@ -197,8 +206,9 @@ public class IdentityFragment extends Fragment implements View.OnClickListener {
                 FrameLayout.LayoutParams params1 = (FrameLayout.LayoutParams) linearLayout1.getLayoutParams();
                 params1.setMargins(0, 40, 0, 0);
                 linearLayout1.setLayoutParams(params1);
-
-
+                 if(asyncResult_selectedIdentityId!=null) {
+                     asyncResult_selectedIdentityId.success(identityInformationModels.get(1).getIdentityId());
+                 }
                 FrameLayout.LayoutParams params2 = (FrameLayout.LayoutParams) linearLayout2.getLayoutParams();
                 params2.setMargins(0, 290, 0, 0);
                 linearLayout2.setLayoutParams(params2);
@@ -225,8 +235,9 @@ public class IdentityFragment extends Fragment implements View.OnClickListener {
                 FrameLayout.LayoutParams params1 = (FrameLayout.LayoutParams) linearLayout1.getLayoutParams();
                 params1.setMargins(0, 40, 0, 0);
                 linearLayout1.setLayoutParams(params1);
-
-
+                if(asyncResult_selectedIdentityId!=null) {
+                    asyncResult_selectedIdentityId.success(identityInformationModels.get(2).getIdentityId());
+                }
                 FrameLayout.LayoutParams params2 = (FrameLayout.LayoutParams) linearLayout2.getLayoutParams();
                 params2.setMargins(0, 170, 0, 0);
                 linearLayout2.setLayoutParams(params2);
@@ -278,6 +289,14 @@ public class IdentityFragment extends Fragment implements View.OnClickListener {
                 gradientDrawable.setStroke(10, ContextCompat.getColor(getContext().getApplicationContext(), hexCode));
 
                 relativeLayout1.setBackground(shape);
+              /*  if(isBroadcast!=null && isBroadcast.equals("1")) {
+                    relativeLayout1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            asyncResult_selectedIdentityId.success(identityInformationModels.get(0).getIdentityId());
+                        }
+                    });
+                }*/
                 network_name.setText(identityInformationModels.get(i).getIdentityName());
                 network_name.setTextColor(getResources().getColor(hexCode));
                 personName.setText(identityInformationModels.get(i).getIdentityUserName());
@@ -316,6 +335,14 @@ public class IdentityFragment extends Fragment implements View.OnClickListener {
                 gradientDrawable.setStroke(10, ContextCompat.getColor(getContext().getApplicationContext(), hexCode));
 
                 relativeLayout2.setBackground(shape);
+              /*  if(isBroadcast!=null && isBroadcast.equals("1")) {
+                    relativeLayout2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            asyncResult_selectedIdentityId.success(identityInformationModels.get(1).getIdentityId());
+                        }
+                    });
+                }*/
                 textView2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -344,7 +371,14 @@ public class IdentityFragment extends Fragment implements View.OnClickListener {
                 gradientDrawable.setStroke(10, ContextCompat.getColor(getContext().getApplicationContext(), hexCode));
                 //shape.setTint(color);
                 relativeLayout3.setBackground(shape);
-
+            /*    if(isBroadcast!=null && isBroadcast.equals("1")) {
+                    relativeLayout3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            asyncResult_selectedIdentityId.success(identityInformationModels.get(2).getIdentityId());
+                        }
+                    });
+                }*/
                 textView3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
