@@ -71,6 +71,8 @@ public class CardTwoActivity extends AppCompatActivity implements View.OnClickLi
     CustomKeywordActivity customKeywordActivity;
     LinearLayout.LayoutParams buttonLayoutParams;
 
+    //latest changes
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
