@@ -29,6 +29,9 @@ public class ConnectionAdapter extends RecyclerView.Adapter<ConnectionAdapter.My
         public TextView title;
         ImageView imageView;
         LinearLayout linearLayout;
+		
+		
+		 
 
         public MyViewHolder(View view) {
             super(view);
