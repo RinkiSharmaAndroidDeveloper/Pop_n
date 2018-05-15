@@ -37,6 +37,9 @@ public class CardThreeActivity extends AppCompatActivity implements View.OnClick
 
     }
 
+
+
+
     public void setAdapter() {
         cardThreeAdapter = new CardThreeAdapter(getApplicationContext(), broadcastLocationModelList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
